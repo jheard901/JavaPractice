@@ -48,5 +48,86 @@ class FunWithLoops
 			//total = sum of log each pass, this happens in the loop definition!
 			System.out.println("Pass #" + log + " Total = " + total);
 		}
+		
+		//while loop
+		System.out.println("\n\nWhile Loop Example");
+		char alphabet = 'a';
+		while(alphabet <= 'z')
+		{
+			System.out.println("Current Alphabet: " + alphabet);
+			alphabet++;
+		}
+		
+		//do while loop
+		System.out.println("\n\nDo While Loop / Guessing Game Example");
+		char usrInpt, ignre, answr = 'k';
+		int attmpt = 0;
+		do
+		{
+			System.out.println("I'm thinking of a letter between A and Z.");
+			System.out.print("Can you guess it: ");
+			//get input
+			usrInpt = (char) System.in.read();  //need this twice because it ignores getting input the 1st time for some reason
+			usrInpt = (char) System.in.read();
+			//discard any other characters in the input buffer
+			do
+			{
+				ignre = (char) System.in.read();
+			} while( ignre != '\n');
+			//give feedback of user being correct, too high, or too low
+			if(usrInpt == answr)
+			{
+				System.out.println("** CORRECT **");
+			}
+			else
+			{
+				String str;
+				if(usrInpt > answr)
+				{
+					//System.out.println("high.");
+					str = "high.";
+				}
+				else
+				{
+					//System.out.println("low.");
+					str = "low.";
+				}
+				System.out.println("Nope... you are too " + str);
+				System.out.println("Try again!\n");
+			}
+		} while(usrInpt != answr);
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
